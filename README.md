@@ -45,8 +45,6 @@ flowchart TD
 └── src/
     ├── bicep/
     │   └── main.bicep                 # Bicep IaC for Hub-Spoke VNet, Firewall & Private Link
-    ├── terraform/
-    │   └── main.tf                    # Terraform alternative IaC configuration
     ├── nsg/
     │   └── nsg-rules.json             # Micro-segmentation NSG & ASG rule definitions
     ├── python/

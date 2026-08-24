@@ -1,3 +1,4 @@
+import ipaddress
 import socket
 import sys
 
@@ -5,7 +6,7 @@ def check_private_dns(hostname: str) -> str:
     try:
         ip = socket.gethostbyname(hostname)
         print(f"[DNS CHECK] {hostname} resolved to {ip}")
-        if ip.startswith("10.") or ip.startswith("172.16.") or ip.startswith("192.168."):
+        if ipaddress.ip_address(ip).is_private:
             print(f" -> SUCCESS: Private IP allocated ({ip}). Public access blocked.")
             return ip
         else:

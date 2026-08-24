@@ -1,3 +1,2 @@
-azure-mgmt-network>=25.0.0
-azure-identity>=1.16.0
-requests>=2.31.0
+# zero_trust_validator.py uses only the Python standard library
+# (socket, ipaddress) — no external dependencies required.

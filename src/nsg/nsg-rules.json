@@ -15,6 +15,23 @@
       }
     },
     {
+      "name": "Allow-Web-To-DB",
+      "properties": {
+        "priority": 200,
+        "direction": "Inbound",
+        "access": "Allow",
+        "protocol": "Tcp",
+        "sourcePortRange": "*",
+        "destinationPortRange": "1433",
+        "sourceApplicationSecurityGroups": [
+          { "id": "/subscriptions/<sub-id>/resourceGroups/rg-zerotrust-lab/providers/Microsoft.Network/applicationSecurityGroups/Web-ASG" }
+        ],
+        "destinationApplicationSecurityGroups": [
+          { "id": "/subscriptions/<sub-id>/resourceGroups/rg-zerotrust-lab/providers/Microsoft.Network/applicationSecurityGroups/DB-ASG" }
+        ]
+      }
+    },
+    {
       "name": "Deny-All-Inbound-Lateral",
       "properties": {
         "priority": 4000,
