@@ -1,0 +1,31 @@
+{
+  "nsgName": "nsg-spoke-app-subnet",
+  "securityRules": [
+    {
+      "name": "Allow-HTTPS-Inbound-From-Hub",
+      "properties": {
+        "priority": 100,
+        "direction": "Inbound",
+        "access": "Allow",
+        "protocol": "Tcp",
+        "sourcePortRange": "*",
+        "destinationPortRange": "443",
+        "sourceAddressPrefix": "10.0.0.0/16",
+        "destinationAddressPrefix": "10.1.1.0/24"
+      }
+    },
+    {
+      "name": "Deny-All-Inbound-Lateral",
+      "properties": {
+        "priority": 4000,
+        "direction": "Inbound",
+        "access": "Deny",
+        "protocol": "*",
+        "sourcePortRange": "*",
+        "destinationPortRange": "*",
+        "sourceAddressPrefix": "*",
+        "destinationAddressPrefix": "*"
+      }
+    }
+  ]
+}
